@@ -48,23 +48,27 @@
 
 - (IBAction)submitAnswer:(id)sender {
   //Submit the answer to the game handler
-  //If answer is correct, do something. Else, display the same question but update question
+  //If answer is correct, get another ramdom question. Else, display the same question but update question
   if([self.gameHandler giveAnswer:[self.answerString integerValue] byPlayer:self.gameHandler.currentPlayer]){
-    
+    self.questionLabel.text = [self.gameHandler getRandomQuestion];
   } else{
     self.questionLabel.text = [self.gameHandler getCurrentQuestion];
   }
   
   //Update label texts
   [self updatedScores];
+  
+  //Clear answer field
+  self.answerTextField.text = @"";
+  self.answerString = @"";
 }
 
 -(void) updatedScores{
   //Update Player 1 score
-  [self.player1Label.text stringByAppendingString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player1.name, [self.gameHandler.player1 getScore], [self.gameHandler.player1 getLives]]];
+  self.player1Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player1.name, [self.gameHandler.player1 getScore], [self.gameHandler.player1 getLives]]];
   
   //Update Player 2 score
-  [self.player2Label.text stringByAppendingString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player2.name, [self.gameHandler.player2 getScore], [self.gameHandler.player2 getLives]]];
+  self.player2Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player2.name, [self.gameHandler.player2 getScore], [self.gameHandler.player2 getLives]]];
 }
 
 
