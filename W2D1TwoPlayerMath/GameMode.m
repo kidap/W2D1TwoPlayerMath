@@ -40,15 +40,15 @@
   
   if ([self isAnswerCorrect:answer]){
     [player addScore:1];
+    [self changeTurn];
+    
     return  YES;
   } else {
     [player subtractLife:1];
+    [self changeTurn];
+    
+    return NO;
   }
-  
-  [self changeTurn];
-  
-  return NO;
-
 }
 
 
