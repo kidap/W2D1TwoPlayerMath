@@ -16,6 +16,7 @@
 @property (nonatomic, strong) Player *currentPlayer;
 @property (nonatomic) NSInteger currentAnswer;
 @property (nonatomic, copy) NSString *currentQuestion;
+@property (nonatomic, assign) BOOL gameOver;
 
 -(instancetype)initGame;
 -(NSString *)getRandomQuestion;

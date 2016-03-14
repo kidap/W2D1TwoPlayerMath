@@ -39,21 +39,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                         <subviews>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3n9-MU-85Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="7"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x71-qg-ZjB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAQ-iD-jzM">
-                                                <rect key="frame" x="107.5" y="0.0" width="108" height="30"/>
+                                                <rect key="frame" x="108" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="8"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JB8-KB-cXr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-Ey-6nu">
-                                                <rect key="frame" x="215.5" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="216" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="9"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6TV-OP-YLp"/>
@@ -65,21 +65,21 @@
                                         <rect key="frame" x="0.0" y="60" width="323" height="30"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-FS-LBG">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJk-us-rUz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0c-b7-18Z">
-                                                <rect key="frame" x="107.5" y="0.0" width="108" height="30"/>
+                                                <rect key="frame" x="108" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="5"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUw-Ln-Dwl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leX-v4-Cif">
-                                                <rect key="frame" x="215.5" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="216" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="6"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Y9-30-MhH"/>
@@ -91,21 +91,21 @@
                                         <rect key="frame" x="0.0" y="120" width="323" height="30"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-ku-8gn">
-                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="1"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRh-N1-gna"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3X-qk-uZG">
-                                                <rect key="frame" x="107.5" y="0.0" width="108" height="30"/>
+                                                <rect key="frame" x="108" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="2"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhB-AY-o6d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ2-pG-7h5">
-                                                <rect key="frame" x="215.5" y="0.0" width="107.5" height="30"/>
+                                                <rect key="frame" x="216" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="3"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGK-BT-l3s"/>
@@ -113,14 +113,28 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWE-3h-xwR">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jWE-3h-xwR">
                                         <rect key="frame" x="0.0" y="180" width="323" height="30"/>
                                         <subviews>
+                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-9Z-GJp">
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f4g-Ga-V0j"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTw-tT-7KP">
-                                                <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                <rect key="frame" x="108" y="0.0" width="108" height="30"/>
                                                 <state key="normal" title="0"/>
                                                 <connections>
                                                     <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Raz-sr-cto"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fki-9u-nAa">
+                                                <rect key="frame" x="216" y="0.0" width="108" height="30"/>
+                                                <state key="normal" title="delete"/>
+                                                <connections>
+                                                    <action selector="numberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="To8-9f-qpH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -202,7 +216,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="answerTextField" destination="nXh-4a-Md7" id="Vkj-7q-M10"/>
-                        <outlet property="gameStatus" destination="gah-23-U2q" id="kd6-WB-MPG"/>
+                        <outlet property="gameStatusText" destination="gah-23-U2q" id="lWn-hk-mcX"/>
                         <outlet property="player1Label" destination="UBW-1q-Bff" id="tYA-8s-2lc"/>
                         <outlet property="player2Label" destination="YBe-Wv-PZO" id="u3G-GC-f5c"/>
                         <outlet property="questionLabel" destination="PG8-Hb-fN3" id="FnT-qn-DlS"/>

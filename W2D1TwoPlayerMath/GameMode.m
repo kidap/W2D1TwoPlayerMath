@@ -17,6 +17,7 @@
     _currentPlayer = _player1;
     _currentAnswer = 0;
     _currentQuestion = [[NSString alloc] init];
+    _gameOver = NO;
   }
 
   return self;
@@ -42,6 +43,12 @@
       break;
     case 3:
       operand = @"/";
+      //Don't allow fractions
+      if (number1 < number2){
+        NSInteger tmp = number2;
+        number2 = number1;
+        number1 = tmp;
+      }
       self.currentAnswer = number1 / number2;
       break;
       
@@ -69,8 +76,14 @@
     return  YES;
   } else {
     [player subtractLife:1];
-    [self changeTurn];
     
+    //If player has no more life, set flag. Else, continue and change player
+    if (player.lives <= 0){
+      self.gameOver = YES;
+    }
+    
+    [self changeTurn];
+  
     return NO;
   }
 }
