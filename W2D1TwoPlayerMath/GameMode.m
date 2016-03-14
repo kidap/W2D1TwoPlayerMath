@@ -23,11 +23,35 @@
 }
 
 -(NSString *)getRandomQuestion{
-  NSInteger addend1 = arc4random_uniform(20)+1;
-  NSInteger addend2 = arc4random_uniform(20)+1;
+  NSInteger number1 = arc4random_uniform(20)+1;
+  NSInteger number2 = arc4random_uniform(20)+1;
+  NSString *operand = [[NSString alloc] init];
   
-  self.currentAnswer = addend1 + addend2;
-  self.currentQuestion = [NSString stringWithFormat:@"%@ + %@?", @(addend1), @(addend2)];
+  switch (arc4random_uniform(4)) {
+    case 0:
+      operand = @"+";
+      self.currentAnswer = number1 + number2;
+      break;
+    case 1:
+      operand = @"-";
+      self.currentAnswer = number1 - number2;
+      break;
+    case 2:
+      operand = @"*";
+      self.currentAnswer = number1 * number2;
+      break;
+    case 3:
+      operand = @"/";
+      self.currentAnswer = number1 / number2;
+      break;
+      
+    default:
+      NSLog(@"Broken link");
+      break;
+  }
+  
+  
+  self.currentQuestion = [NSString stringWithFormat:@"%@ %@ %@?", @(number1), operand, @(number2)];
   
   return [NSString stringWithFormat:@"%@: %@", self.currentPlayer.name, self.currentQuestion];
   

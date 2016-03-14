@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *answerTextField;
 @property (strong, nonatomic) NSString *answerString;
 @property (strong, nonatomic) GameMode *gameHandler;
+@property (strong, nonatomic) IBOutlet UILabel *gameStatus;
 
 @end
 
@@ -35,7 +36,7 @@
   self.questionLabel.text = [self.gameHandler getRandomQuestion];
   
   //Update label texts
-  [self updatedScores];
+  [self updatedScoresLives];
   
 }
 - (IBAction)numberPressed:(UIButton *)sender {
@@ -49,21 +50,31 @@
 - (IBAction)submitAnswer:(id)sender {
   //Submit the answer to the game handler
   //If answer is correct, get another ramdom question. Else, display the same question but update question
+  Player *playerWhoAnswered = self.gameHandler.currentPlayer;
+  
   if([self.gameHandler giveAnswer:[self.answerString integerValue] byPlayer:self.gameHandler.currentPlayer]){
+    self.gameStatus.text = [NSString stringWithFormat:@"%@ got the right answer.",playerWhoAnswered.name ];
+    [self.gameStatus setTextColor:[UIColor greenColor]];
+    
     self.questionLabel.text = [self.gameHandler getRandomQuestion];
   } else{
+    
+    self.gameStatus.text = [NSString stringWithFormat:@"%@ got the wrong answer.",
+                            playerWhoAnswered.name ];
+    [self.gameStatus setTextColor:[UIColor redColor]];
+    
     self.questionLabel.text = [self.gameHandler getCurrentQuestion];
   }
   
   //Update label texts
-  [self updatedScores];
+  [self updatedScoresLives];
   
   //Clear answer field
   self.answerTextField.text = @"";
   self.answerString = @"";
 }
 
--(void) updatedScores{
+-(void) updatedScoresLives{
   //Update Player 1 score
   self.player1Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player1.name, [self.gameHandler.player1 getScore], [self.gameHandler.player1 getLives]]];
   

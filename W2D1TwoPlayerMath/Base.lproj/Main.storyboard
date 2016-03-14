@@ -202,6 +202,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="answerTextField" destination="nXh-4a-Md7" id="Vkj-7q-M10"/>
+                        <outlet property="gameStatus" destination="gah-23-U2q" id="kd6-WB-MPG"/>
                         <outlet property="player1Label" destination="UBW-1q-Bff" id="tYA-8s-2lc"/>
                         <outlet property="player2Label" destination="YBe-Wv-PZO" id="u3G-GC-f5c"/>
                         <outlet property="questionLabel" destination="PG8-Hb-fN3" id="FnT-qn-DlS"/>
