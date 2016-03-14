@@ -16,6 +16,7 @@
     _player2 = [[Player alloc] initWithName:@"Player2"];
     _currentPlayer = _player1;
     _currentAnswer = 0;
+    _currentQuestion = [[NSString alloc] init];
   }
 
   return self;
@@ -25,10 +26,14 @@
   NSInteger addend1 = arc4random_uniform(20)+1;
   NSInteger addend2 = arc4random_uniform(20)+1;
   
-  _currentAnswer = addend1 + addend2;
+  self.currentAnswer = addend1 + addend2;
+  self.currentQuestion = [NSString stringWithFormat:@"%@ + %@?", @(addend1), @(addend2)];
   
-  return [NSString stringWithFormat:@"%@: %@ + %@?", self.currentPlayer, @(addend1), @(addend2)];
+  return [NSString stringWithFormat:@"%@: %@", self.currentPlayer.name, self.currentQuestion];
   
+}
+-(NSString *)getCurrentQuestion{
+  return [NSString stringWithFormat:@"%@: %@", self.currentPlayer.name, self.currentQuestion];
 }
 
 -(BOOL)giveAnswer:(NSInteger)answer byPlayer:(Player *)player{
@@ -39,6 +44,8 @@
   } else {
     [player subtractLife:1];
   }
+  
+  [self changeTurn];
   
   return NO;
 
@@ -55,7 +62,11 @@
 }
 
 -(void)changeTurn{
-
+  if ([self.currentPlayer isEqual:self.player1]) {
+    self.currentPlayer = self.player2;
+  } else{
+    self.currentPlayer = self.player1;
+  }
 }
 
 

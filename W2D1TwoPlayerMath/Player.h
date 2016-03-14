@@ -17,4 +17,6 @@
 -(instancetype) initWithName:(NSString *) name;
 -(void) addScore:(NSInteger)points;
 -(void) subtractLife:(NSInteger)lives;
+-(NSString *) getScore;
+-(NSString *) getLives;
 @end

@@ -13,6 +13,8 @@
 -(instancetype) initWithName:(NSString *) name{
   if (self = [super init]) {
     _name = name;
+    _score = 0;
+    _lives = 3;
   }
   return self;
 }
@@ -23,6 +25,12 @@
 }
 -(void) subtractLife:(NSInteger)lives{
   self.lives -= lives;
+}
+-(NSString *) getScore{
+  return [NSString stringWithFormat:@"%ld",self.score];
+}
+-(NSString *) getLives{
+  return [NSString stringWithFormat:@"%ld",self.lives];
 }
 
 @end

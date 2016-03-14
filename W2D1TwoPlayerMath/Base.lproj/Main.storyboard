@@ -160,7 +160,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-4a-Md7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-4a-Md7">
                                 <rect key="frame" x="26" y="210" width="323" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -187,6 +187,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="answerTextField" destination="nXh-4a-Md7" id="Vkj-7q-M10"/>
                         <outlet property="player1Label" destination="UBW-1q-Bff" id="tYA-8s-2lc"/>
                         <outlet property="player2Label" destination="YBe-Wv-PZO" id="u3G-GC-f5c"/>
                         <outlet property="questionLabel" destination="PG8-Hb-fN3" id="FnT-qn-DlS"/>

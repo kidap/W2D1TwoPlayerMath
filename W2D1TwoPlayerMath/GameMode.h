@@ -15,9 +15,11 @@
 @property (nonatomic, strong) Player *player2;
 @property (nonatomic, strong) Player *currentPlayer;
 @property (nonatomic) NSInteger currentAnswer;
+@property (nonatomic, copy) NSString *currentQuestion;
 
 -(instancetype)initGame;
 -(NSString *)getRandomQuestion;
+-(NSString *)getCurrentQuestion;
 -(BOOL)giveAnswer:(NSInteger)answer byPlayer:(Player *)player;
 
 @end

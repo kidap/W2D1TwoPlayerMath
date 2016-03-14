@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *player1Label;
 @property (strong, nonatomic) IBOutlet UILabel *player2Label;
 @property (strong, nonatomic) IBOutlet UILabel *questionLabel;
+@property (strong, nonatomic) IBOutlet UITextField *answerTextField;
 @property (strong, nonatomic) NSString *answerString;
 @property (strong, nonatomic) GameMode *gameHandler;
 
@@ -25,26 +26,47 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
   
-  self.answerString = @"";
+  //Initialize Game
+  self.answerString = [[NSString alloc] init];
   if(!self.gameHandler){
     self.gameHandler = [[GameMode alloc] initGame];
   }
   
-}
--(void) updatedScores{
-  [self.player1Label.text stringByAppendingString:[NSString stringWithFormat:@"%@:%@",self.gameHandler.player1.name, @(self.gameHandler.player1.score)]];
+  self.questionLabel.text = [self.gameHandler getRandomQuestion];
   
-  [self.player1Label.text stringByAppendingString:[NSString stringWithFormat:@"%@:%@",self.gameHandler.player1.name, @(self.gameHandler.player1.score)]];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+  //Update label texts
+  [self updatedScores];
+  
 }
 - (IBAction)numberPressed:(UIButton *)sender {
-  [self.answerString stringByAppendingString:@(sender.tag)];
+  //Get the number pressed using the tags
+  self.answerString = [self.answerString stringByAppendingString:[@(sender.tag) stringValue]];
+  
+  //self.answerString = @"number entered";
+  self.answerTextField.text = self.answerString;
 }
 
 - (IBAction)submitAnswer:(id)sender {
+  //Submit the answer to the game handler
+  //If answer is correct, do something. Else, display the same question but update question
+  if([self.gameHandler giveAnswer:[self.answerString integerValue] byPlayer:self.gameHandler.currentPlayer]){
+    
+  } else{
+    self.questionLabel.text = [self.gameHandler getCurrentQuestion];
+  }
+  
+  //Update label texts
+  [self updatedScores];
 }
+
+-(void) updatedScores{
+  //Update Player 1 score
+  [self.player1Label.text stringByAppendingString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player1.name, [self.gameHandler.player1 getScore], [self.gameHandler.player1 getLives]]];
+  
+  //Update Player 2 score
+  [self.player2Label.text stringByAppendingString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player2.name, [self.gameHandler.player2 getScore], [self.gameHandler.player2 getLives]]];
+}
+
+
+
 @end
