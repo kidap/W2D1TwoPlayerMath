@@ -49,16 +49,20 @@
 
 - (IBAction)submitAnswer:(id)sender {
   if (![self.answerTextField.text isEqualToString:@""]) {
-    
-    //Submit the answer to the game handler
+   
     //If answer is correct, get another ramdom question. Else, display the same question but update question
     Player *playerWhoAnswered = self.gameHandler.currentPlayer;
     
-    if([self.gameHandler giveAnswer:[self.answerTextField.text integerValue] byPlayer:self.gameHandler.currentPlayer]){
-      [self updatedgameStatusTextWithString:[NSString stringWithFormat:@"%@ got the right answer.",playerWhoAnswered.name ] andColor:[UIColor greenColor]];
+    //Submit the answer to the game handler
+    if([self.gameHandler giveAnswer:[self.answerTextField.text integerValue]
+                           byPlayer:self.gameHandler.currentPlayer]){
+      [self updatedgameStatusTextWithString:[NSString stringWithFormat:@"%@ got the right answer.",
+                                             playerWhoAnswered.name ] andColor:[UIColor greenColor]];
       self.questionLabel.text = [self.gameHandler getRandomQuestion];
     } else{
-      [self updatedgameStatusTextWithString:[NSString stringWithFormat:@"%@ got the wrong answer.",playerWhoAnswered.name] andColor:[UIColor redColor]];
+      [self updatedgameStatusTextWithString:[NSString stringWithFormat:@"%@ got the wrong answer.",
+                                             playerWhoAnswered.name]
+                                   andColor:[UIColor redColor]];
       self.questionLabel.text = [self.gameHandler getCurrentQuestion];
     }
     
@@ -67,14 +71,20 @@
     
     //Clear answer field
     self.answerTextField.text = @"";
-    self.answerTextField.text = @"";
     
+    //If game ends, display alert controller
     if (self.gameHandler.gameOver) {
-      UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ wins!!!", self.gameHandler.currentPlayer.name] message:@"Do you want to play again?" preferredStyle:UIAlertControllerStyleAlert];
-      UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+      UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ wins!!!",
+                                                                              self.gameHandler.currentPlayer.name]
+                                                                     message:@"Do you want to play again?"
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+      UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Yes"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * _Nonnull action) {
         [self initializeGame];
       }];
-      UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+      UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel
+                                                     handler:^(UIAlertAction * _Nonnull action) {
         self.view.alpha = 0.5;
         [self.view setUserInteractionEnabled:NO];
       }];
@@ -91,9 +101,8 @@
 -(void) initializeGame{
   //Initialize Game
   self.answerTextField.text = [[NSString alloc] init];
-  //if(!self.gameHandler){
   self.gameHandler = [[GameMode alloc] initGame];
-  //}
+
   
   self.questionLabel.text = [self.gameHandler getRandomQuestion];
   self.gameStatusText.text = @"";
@@ -104,10 +113,16 @@
 
 -(void) updatedScoresLives{
   //Update Player 1 score
-  self.player1Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player1.name, [self.gameHandler.player1 getScore], [self.gameHandler.player1 getLives]]];
+  self.player1Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",
+                                                       self.gameHandler.player1.name,
+                                                       [self.gameHandler.player1 getScore],
+                                                       [self.gameHandler.player1 getLives]]];
   
   //Update Player 2 score
-  self.player2Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",self.gameHandler.player2.name, [self.gameHandler.player2 getScore], [self.gameHandler.player2 getLives]]];
+  self.player2Label.text = [NSString stringWithString:[NSString stringWithFormat:@"%@: (Score)%@ (Lives)%@",
+                                                       self.gameHandler.player2.name,
+                                                       [self.gameHandler.player2 getScore],
+                                                       [self.gameHandler.player2 getLives]]];
 }
 
 -(void)updatedgameStatusTextWithString:(NSString *)text andColor:(UIColor *)color{
